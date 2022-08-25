@@ -1,0 +1,101 @@
+<?php
+    // $userRole=$this->menu->getMenuData('USM_USID')->result();
+    // echo "<pre>";
+    // print_r($userRole); 
+    //$query="SELECT * FROM MNU_MST,USR_CAT,USR_ROL,USR_MST WHERE USM_CTCD=USR_CTCD AND USR_CTCD=USC_CTCD AND USR_MNCD=MNM_MNCD AND USM_USID=1";   
+
+    $userRole=get_table_data('MNU_MST,USR_CAT,USR_ROL,USR_MST','*',"USM_CTCD=USR_CTCD AND USR_CTCD=USC_CTCD AND USR_MNCD=MNM_MNCD AND USM_USID=1")->result();
+    echo "<pre>";
+    print_r($userRole); 
+   
+?>
+ <nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+ 
+        <li class="nav-item">
+            <a href="<?= base_url('user_list');?>" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>USERS</p>
+            </a>
+        </li>     
+        <li class="nav-header">COMMON SETTING</li> 
+        <li class="nav-item navbtnwebsetting">
+            <a href="#" class="nav-link" id="websetting">
+                <i class="fa fa-cogs" aria-hidden="true"></i> 
+                <p>
+                    COMMON SETTING
+                    <i class="fas fa-angle-left right"></i> 
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+                    <a href="<?= base_url('common_type_list');?>" class="nav-link ">
+                        <i class="fas fa-circle nav-icon"></i>
+                        <p>Common Type</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a  href="<?= base_url('common_list');?>" class="nav-link ">
+                  <i class="fas fa-circle nav-icon"   ></i>
+                    <p>Common</p>
+                    </a>
+                </li>
+            </ul>  
+        </li>
+        <li class="nav-header">MENU SETTING</li>
+       
+        <li class="nav-item navbtnwebsetting">
+            <a href="#" class="nav-link" id="websetting">
+                <i class="fa fa-cogs" aria-hidden="true"></i> 
+                <p>
+                     MENU SETTING
+                    <i class="fas fa-angle-left right"></i>
+                    
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="<?= base_url('menu_group_list');?>" class="nav-link">
+                    <i class="fas fa-circle nav-icon"></i>
+                    <p>   Menu Type</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('sub_menu_list');?>" class="nav-link">
+                        <i class="fas fa-circle nav-icon"></i>
+                        <p> Menu Name</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('user_category_list');?>" class="nav-link">
+                        <i class="fas fa-circle nav-icon"></i>
+                        <p> User Category</p>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="<?= base_url('user_role_list');?>" class="nav-link">
+                        <i class="fas fa-circle nav-icon"></i>
+                        <p> User Role</p>
+                    </a>
+                </li> 
+                <li class="nav-item">
+                    <a href="<?= base_url('teacher_list');?>" class="nav-link">
+                        <i class="fas fa-circle nav-icon"></i>
+                        <p>Teacher List</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('student_list');?>" class="nav-link">
+                        <i class="fas fa-circle nav-icon"></i>
+                        <p>Student List</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        
+    </ul>
+    
+</nav>
+  
+            
